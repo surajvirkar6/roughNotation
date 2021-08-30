@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Rough Notation</title>
+	<style type="text/css">
+		h1{
+			padding: 20px;
+			text-align: center;
+		}
+		div{
+			margin: auto;
+			width: 30%;
+		}
+	</style>
+</head>
+<body>
+	<div>
+	<h1><em id="underline">Underline</em></h1>
+	<h1><em id="box">Box</em></h1>
+	<h1><em id="circle">Circle</em></h1>
+	<h1><em id="highlight">Highlight</em></h1>
+	<h1><em id="strike-through">Strike-through</em></h1>
+	<h1><em id="crossed-off">Crossed-off</em></h1>
+	<h1><em id="bracket">Bracket</em></h1>
+	</div>
+	<script type="module">
+		import { annotate, annotationGroup } from 'https://unpkg.com/rough-notation?module';
+
+		const a1 = annotate(document.querySelector('#underline'), { type: 'underline', color: 'red' });
+		const a2 = annotate(document.querySelector('#box'), { type: 'box', color: 'blue' });
+		const a3 = annotate(document.querySelector('#circle'), { type: 'circle', color: 'red', padding: 20 });
+		const a4 = annotate(document.querySelector('#highlight'), { type: 'highlight', color: 'yellow' });
+		const a5 = annotate(document.querySelector('#strike-through'), { type: 'strike-through', color: 'green' });
+		const a6 = annotate(document.querySelector('#crossed-off'), { type: 'crossed-off', color: 'orange' });
+		const a7 = annotate(document.querySelector('#bracket'), { type: 'bracket', color: 'grey', brackets: ['left', 'right'] });
+		const ag = annotationGroup([a1, a2, a3, a4, a5, a6, a7]);
+		ag.show(); 
+	</script>
+</body>
+</html>
